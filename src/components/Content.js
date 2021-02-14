@@ -1,7 +1,6 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import styled from 'styled-components';
 import {device} from '../helper/media';
-import glassTube from '../assets/Asset 6@4x.png'
 import {countdown} from "../helper/countdown";
 import TubeBulb from './TubeBulb';
 
@@ -21,19 +20,12 @@ color:white;
 
 const StyledClockDiv = styled.div`
   position:relative;
+  max-width:100vw;
   flex-grow:1;
-  width:100%;
-  display:flex;
-  align-items:center;
-  padding-top:2rem;
-  flex-direction:column;
-
-  @media ${device.laptop}{
-    flex-direction:row;
-    align-items:center;
-    justify-content:center;
-    padding-top:0rem;
-  }
+  display:grid;
+  padding:2rem;
+  grid-template-rows:1;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 `;
 
 const StyledHeadlineDiv = styled.div`
@@ -48,6 +40,11 @@ const TimeDiv = styled.div`
   flex-direction:row;
   height:30vh;
   background-color:aliceblue;
+`;
+
+const GridItem = styled.div`
+  display:flex;
+  flex-direction:column;
 `;
 
 const Content = () => {
@@ -72,10 +69,18 @@ const Content = () => {
 
       </StyledHeadlineDiv>
       <StyledClockDiv>
-          <TubeBulb time={timeObj.days}/>
-          <TubeBulb time={timeObj.hours}/>
-          <TubeBulb time={timeObj.mins}/>
-          <TubeBulb time={timeObj.secs}/>
+        <GridItem>
+          <TubeBulb time={timeObj.days } unit="Days"/>
+        </GridItem>
+        <GridItem>
+          <TubeBulb time={timeObj.hours } unit="Hours"/>
+        </GridItem>
+        <GridItem>
+          <TubeBulb time={timeObj.mins } unit="Minutes"/>
+        </GridItem>
+        <GridItem>
+          <TubeBulb time={timeObj.secs } unit="Seconds"/>
+        </GridItem>
       </StyledClockDiv>
     </StyledContentDiv>
   )

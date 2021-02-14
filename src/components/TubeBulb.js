@@ -1,60 +1,50 @@
 import React from 'react';
-import styled from "styled-components";
-import {device} from '../helper/media';
-import tubePicture from '../assets/Asset.png'
+import styled from 'styled-components';
+import tube from '../assets/Asset.png'
 
-const TubeBulbSectionWrapper = styled.div`
-  width:auto;
-  padding:0rem 2rem;
-  display:flex;
-  
-  flex-direction:row;
-  height:30vh;
+const TopDiv = styled.div`
 
-  @media ${device.laptop}{
-    padding:0rem;
-    height:53vh;
-    flex-grow:1;
-  }
 `;
 
-const TubeBulbWrapperLeft = styled.div`
-  position:relative;
-  display:flex;
-  justify-content:flex-end;
-  height:100%;
-  
+const LowerDiv = styled.div`
+display:flex;
+position:relative;
+flex-direction:row;
+width:100%;
 `;
 
-const TubeBulbWrapperRight = styled.div`
-  position:relative;
-  display:flex;
-  justify-content:flex-start;
-  height:100%;
+const Unit = styled.h1`
+color:white;
 `;
 
-const TubePic = styled.img`
-  height:100%;
-  width:auto;
+const TubeWrapperLeft = styled.div`
+flex-grow:1;
 `;
 
-const GlowTime = styled.h1`
-  position:absolute;
-  color:white;
+const TubeWrapperRight = styled.div`
+flex-grow:1;
+`;
+
+const TubeImg = styled.img`
+width:100%;
 `;
 
 const TubeBulb = (props) => {
   return (
-    <TubeBulbSectionWrapper>
-      <TubeBulbWrapperLeft>
-        <TubePic src={tubePicture} />
-        <GlowTime>{props.time}</GlowTime>
-      </TubeBulbWrapperLeft>
-      <TubeBulbWrapperRight>
-        <TubePic src={tubePicture}/>
-      </TubeBulbWrapperRight>
-    </TubeBulbSectionWrapper>
+    <React.Fragment>
+      <TopDiv>
+        <Unit>{props.unit }</Unit>
+      </TopDiv>
+      <LowerDiv>
+        <TubeWrapperLeft>
+          <TubeImg src={ tube}/>
+        </TubeWrapperLeft>
+        <TubeWrapperRight>
+          <TubeImg src={ tube}/>
+        </TubeWrapperRight>
+      </LowerDiv>
+    </React.Fragment>
   )
 }
 
-export default TubeBulb;
+export default TubeBulb
