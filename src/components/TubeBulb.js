@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import {keyframes} from 'styled-components';
 import tube from '../assets/Asset.png'
 
+const colors = {
+  innerGLow: "#ffb510",
+  text: "#fce510",
+  outerGlow:"#fb0000"
+}
+
 const TopDiv = styled.div`
 display:flex;
 align-items:center;
@@ -45,13 +51,33 @@ const DigitDiv = styled.div`
   transform:translate(-50%,-35%)
 `;
 
+
+const flicker = keyframes`
+  0%,80% {
+    color:#333;
+    text-shadow:none;
+  }
+
+  100% {
+    color:${colors.text};
+    text-shadow:0 0 10px #fb0000,
+               0 0 20px #fb0000,
+               0 0 40px #fb0000,
+               0 0 80px #fb0000,
+               0 0 120px #fb0000,
+               0 0 150px #fb0000;
+  }
+`;
+
+
 const Digit = styled.h1`
 color:#333;
-
 font-size:150px;
 `;
 
-const flicker = keyframes``;
+const DigitSpan = styled.span`
+  animation: ${flicker} 1s linear infinite;
+`;
 
 const TubeBulb = (props) => {
 
@@ -66,13 +92,13 @@ const TubeBulb = (props) => {
       <LowerDiv>
         <TubeWrapperLeft>
           <DigitDiv>
-            <Digit>{leftDigit?leftDigit:0}</Digit>
+            <Digit><DigitSpan>{leftDigit?leftDigit:0}</DigitSpan></Digit>
           </DigitDiv>
           <TubeImg src={tube} />
         </TubeWrapperLeft>
         <TubeWrapperRight>
           <DigitDiv>
-            <Digit>{rightDigit?rightDigit:0}</Digit>
+            <Digit><DigitSpan>{rightDigit?rightDigit:0}</DigitSpan></Digit>
           </DigitDiv>
           <TubeImg src={tube} />
         </TubeWrapperRight>
