@@ -129,7 +129,7 @@ const DigitSpan = styled.span`
 const MeshImg = styled.img`
   position:absolute;
   top:20%;
-  left:20%;
+  left:10%;
   z-index:3;
   width:80%;
 `;
