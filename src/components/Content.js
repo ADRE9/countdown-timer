@@ -44,6 +44,7 @@ const TimeDiv = styled.div`
 
 const GridItem = styled.div`
   display:flex;
+  position:relative;
   flex-direction:column;
 `;
 
