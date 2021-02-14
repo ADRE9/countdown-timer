@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {keyframes} from 'styled-components';
 import tube from '../assets/Asset.png'
 
 const TopDiv = styled.div`
@@ -17,7 +18,7 @@ width:100%;
 `;
 
 const Unit = styled.h1`
-color:white;
+color:#333;
 `;
 
 const TubeWrapperLeft = styled.div`
@@ -31,20 +32,26 @@ flex-grow:1;
 `;
 
 const TubeImg = styled.img`
+position:relative;
+z-index:5;
 width:100%;
 `;
 
 const DigitDiv = styled.div`
   position:absolute;
+  z-index:2;
   top:20% ;
   left:50% ;
   transform:translate(-50%,-35%)
 `;
 
 const Digit = styled.h1`
-color:white;
+color:#333;
+
 font-size:150px;
 `;
+
+const flicker = keyframes``;
 
 const TubeBulb = (props) => {
 
