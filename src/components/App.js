@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 import Content from './Content';
+import {device} from '../helper/media';
 
 const Body = styled.div`
   position:relative;

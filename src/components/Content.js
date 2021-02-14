@@ -20,13 +20,19 @@ color:white;
 `;
 
 const StyledClockDiv = styled.div`
+  position:relative;
   flex-grow:1;
   width:100%;
   display:flex;
+  align-items:center;
   padding-top:2rem;
   flex-direction:column;
-  @media ${device.laptop}{
 
+  @media ${device.laptop}{
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    padding-top:0rem;
   }
 `;
 
@@ -66,10 +72,10 @@ const Content = () => {
 
       </StyledHeadlineDiv>
       <StyledClockDiv>
-          <TubeBulb days={timeObj.days}/>
-          <TubeBulb hours={timeObj.hours}/>
-          <TubeBulb mins={timeObj.mins}/>
-          <TubeBulb secs={timeObj.secs}/>
+          <TubeBulb time={timeObj.days}/>
+          <TubeBulb time={timeObj.hours}/>
+          <TubeBulb time={timeObj.mins}/>
+          <TubeBulb time={timeObj.secs}/>
       </StyledClockDiv>
     </StyledContentDiv>
   )
