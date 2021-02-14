@@ -25,7 +25,13 @@ width:100%;
 `;
 
 const Unit = styled.h1`
-color:#333;
+color:${colors.text};
+    text-shadow:0 0 10px #fb0000,
+               0 0 20px #fb0000,
+               0 0 40px #fb0000,
+               0 0 80px #fb0000,
+               0 0 120px #fb0000,
+               0 0 150px #fb0000;
 `;
 
 const TubeWrapperLeft = styled.div`
@@ -123,7 +129,7 @@ font-size:150px;
 `;
 
 const DigitSpan = styled.span`
-  animation: ${flicker} 1s ease-in-out ;
+  animation: ${flicker} 2s ease-in-out ;
 `;
 
 const MeshImg = styled.img`

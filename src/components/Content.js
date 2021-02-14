@@ -23,6 +23,7 @@ const StyledClockDiv = styled.div`
   max-width:100vw;
   flex-grow:1;
   display:grid;
+  margin-top:2rem;
   padding:2rem;
   grid-template-rows:1;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -35,13 +36,21 @@ const StyledClockDiv = styled.div`
 const StyledHeadlineDiv = styled.div`
   width:100%;
   display:flex;
+  padding-top:2em;
   align-items:center;
   justify-content:center;
   height:15vh;
 `;
 
 const EventName = styled.h1`
-  color:white;
+  color:#ffb510;
+  text-shadow:0 0 10px #fb0000,
+               0 0 20px #fb0000,
+               0 0 40px #fb0000,
+               0 0 80px #fb0000,
+               0 0 120px #fb0000,
+               0 0 150px #fb0000;
+  font-size:70px;
 `;
 
 const TimeDiv = styled.div`
