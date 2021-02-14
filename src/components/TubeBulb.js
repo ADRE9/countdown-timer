@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import {keyframes} from 'styled-components';
-import tube from '../assets/Asset.png'
+import tube from '../assets/Asset.png';
+import mesh from '../assets/6407bcee264ca272199c4f8c1bbe288e.png'
 
 const colors = {
   innerGLow: "#ffb510",
@@ -53,7 +54,47 @@ const DigitDiv = styled.div`
 
 
 const flicker = keyframes`
-  0%,80% {
+  0%{
+    color:${colors.text};
+    text-shadow:0 0 10px #fb0000,
+               0 0 20px #fb0000,
+               0 0 40px #fb0000,
+               0 0 80px #fb0000,
+               0 0 120px #fb0000,
+               0 0 150px #fb0000;
+  }
+
+  10%{
+    color:#333;
+    text-shadow:none;
+  }
+
+  13%{
+    color:${colors.text};
+    text-shadow:0 0 10px #fb0000,
+               0 0 20px #fb0000,
+               0 0 40px #fb0000,
+               0 0 80px #fb0000,
+               0 0 120px #fb0000,
+               0 0 150px #fb0000;
+  }
+  
+  25% {
+    color:#333;
+    text-shadow:none;
+  }
+
+  50%{
+    color:${colors.text};
+    text-shadow:0 0 10px #fb0000,
+               0 0 20px #fb0000,
+               0 0 40px #fb0000,
+               0 0 80px #fb0000,
+               0 0 120px #fb0000,
+               0 0 150px #fb0000;
+  }
+
+  80%{
     color:#333;
     text-shadow:none;
   }
@@ -71,12 +112,25 @@ const flicker = keyframes`
 
 
 const Digit = styled.h1`
-color:#333;
+color:${colors.text};
+    text-shadow:0 0 10px #fb0000,
+               0 0 20px #fb0000,
+               0 0 40px #fb0000,
+               0 0 80px #fb0000,
+               0 0 120px #fb0000,
+               0 0 150px #fb0000;
 font-size:150px;
 `;
 
 const DigitSpan = styled.span`
-  animation: ${flicker} 1s linear infinite;
+  animation: ${flicker} 1s ease-in-out ;
+`;
+
+const MeshImg = styled.img`
+  position:absolute;
+  top:20%;
+  z-index:3;
+  width:100%;
 `;
 
 const TubeBulb = (props) => {
@@ -94,12 +148,14 @@ const TubeBulb = (props) => {
           <DigitDiv>
             <Digit><DigitSpan>{leftDigit?leftDigit:0}</DigitSpan></Digit>
           </DigitDiv>
+          <MeshImg src={mesh}/>
           <TubeImg src={tube} />
         </TubeWrapperLeft>
         <TubeWrapperRight>
           <DigitDiv>
             <Digit><DigitSpan>{rightDigit?rightDigit:0}</DigitSpan></Digit>
           </DigitDiv>
+          <MeshImg src={mesh}/>
           <TubeImg src={tube} />
         </TubeWrapperRight>
       </LowerDiv>

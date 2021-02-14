@@ -23,7 +23,7 @@ const StyledWrapperDiv = styled.div`
 const App = () => {
   return (
     <Body>
-      <Header/>
+      
       <Content/>
       <Footer />
     </Body>
