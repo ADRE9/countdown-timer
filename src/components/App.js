@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Content from './Content';
 
 const Body = styled.div`
+  position:relative;
   width:100%;
   height:100vh;
   padding:0;
@@ -21,7 +22,7 @@ const StyledWrapperDiv = styled.div`
 const App = () => {
   return (
     <Body>
-      <Header />
+      <Header/>
       <Content/>
       <Footer />
     </Body>

@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledFooterDiv = styled.div`
   display:flex;
   width:100%;
-  height:10vh;
+  height:5vh;
   background-color:black;
   justify-content:center;
   align-items:center;
