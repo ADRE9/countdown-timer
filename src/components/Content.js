@@ -26,12 +26,22 @@ const StyledClockDiv = styled.div`
   padding:2rem;
   grid-template-rows:1;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+  @media ${device.laptop}{
+  grid-gap: 2rem;
+  }
 `;
 
 const StyledHeadlineDiv = styled.div`
   width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   height:15vh;
-  background-color:blue;
+`;
+
+const EventName = styled.h1`
+  color:white;
 `;
 
 const TimeDiv = styled.div`
@@ -57,17 +67,10 @@ const Content = () => {
     setTimeObj(countdown(eventTime))
   }, 1000);
 
-  /*useEffect(() => {
-    
-    setInterval(function () {
-      setTimeObj(countdown(eventTime))
-    }, 1000);  
-  },[timeObj,eventTime]);*/
-
   return (
     <StyledContentDiv>
       <StyledHeadlineDiv>
-
+        <EventName>Ambassadors Summit</EventName>
       </StyledHeadlineDiv>
       <StyledClockDiv>
         <GridItem>
