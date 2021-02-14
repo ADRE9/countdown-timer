@@ -130,7 +130,7 @@ const MeshImg = styled.img`
   position:absolute;
   top:20%;
   z-index:3;
-  width:100%;
+  width:80%;
 `;
 
 const TubeBulb = (props) => {
