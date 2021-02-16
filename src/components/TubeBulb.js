@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {keyframes} from 'styled-components';
+import { keyframes } from 'styled-components';
+import { device } from "../helper/media";
 import tube from '../assets/Asset.png';
 import mesh from '../assets/6407bcee264ca272199c4f8c1bbe288e.png'
 
@@ -32,6 +33,12 @@ color:${colors.text};
                0 0 80px #fb0000,
                0 0 120px #fb0000,
                0 0 150px #fb0000;
+    font-family: 'Inconsolata';
+    font-size:80px;
+
+    @media ${device.laptopL}{
+      font-size:35px;
+    }
 `;
 
 const TubeWrapperLeft = styled.div`
@@ -53,9 +60,10 @@ width:100%;
 const DigitDiv = styled.div`
   position:absolute;
   z-index:2;
-  top:20% ;
+  top:23% ;
   left:50% ;
-  transform:translate(-50%,-35%)
+  transform:translate(-50%,-35%);
+  
 `;
 
 
@@ -125,7 +133,12 @@ color:${colors.text};
                0 0 80px #fb0000,
                0 0 120px #fb0000,
                0 0 150px #fb0000;
-font-size:150px;
+font-size:350px;
+font-family: 'Roboto', sans-serif;
+
+@media ${device.laptopL}{
+  font-size:130px;
+}
 `;
 
 const DigitSpan = styled.span`
